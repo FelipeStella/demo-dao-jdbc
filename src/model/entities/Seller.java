@@ -103,7 +103,7 @@ public class Seller implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Seller:\n"
+		return "\nSeller:"
 				+ "\nId: " + id
 				+ "\nName: " + name 
 				+ "\nE-mail: " + email 
