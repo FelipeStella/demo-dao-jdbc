@@ -2,12 +2,10 @@ package application;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 import model.dao.DaoFactory;
 import model.dao.SellerDao;
-import model.dao.impl.SellerDaoJDBC;
 import model.entities.Department;
 import model.entities.Seller;
 
@@ -46,6 +44,13 @@ public class Program {
 				sdf.parse("26/04/2014"), 2200.00, dep);
 		sellerDao.insert(newSeller);
 		System.out.println("Inserted! New ID: " + newSeller.getId());
+		
+		System.out.println("\n=== Test #5: seller update ===");
+		
+		seller = sellerDao.findById(8);
+		seller.setName("Thais Duarte Oliveira");
+		sellerDao.update(seller);
+		System.out.println("Update completed");
 		
 
 	}
