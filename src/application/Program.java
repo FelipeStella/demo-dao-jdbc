@@ -20,7 +20,6 @@ public class Program {
 		Scanner sc = new Scanner(System.in);
 		
 		SellerDao sellerDao = DaoFactory.createSellerDao();
-		DepartmentDao departmentDao = DaoFactory.createDepartmentDao();
 		
 		System.out.println("\n\n----------------- TESTS SELLER --------------------\n\n");
 		
@@ -38,7 +37,7 @@ public class Program {
 			System.out.println(obj);
 		}
 		
-		System.out.println("\n=== Test #3: seller findByDepartment ===");
+		System.out.println("\n=== Test #3: seller findAll ===");
 		
 		list = sellerDao.findAll();
 		for (Seller obj : list) {
@@ -65,16 +64,7 @@ public class Program {
 		sellerDao.deleteById(id);
 		System.out.println("Data successfully deleted!");
 		
-		System.out.println("\n\n----------------- TESTS DEPARTMENT --------------------\n\n");
 		
-		System.out.println("\n=== Test #1: department insert ===");
-		
-		System.out.print("Enter department name: ");
-		dep = new Department(null, sc.nextLine());
-		departmentDao.insert(dep);
-		
-		System.out.println("Date entered successfully! ID: " + dep.getId());
-
 	}
 
 }
